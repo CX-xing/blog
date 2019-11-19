@@ -1,6 +1,6 @@
 package com.cx.blog;
 
-import com.cx.blog.model.User;
+import com.cx.blog.model.UserVo;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -60,7 +60,7 @@ public class MockMvcTests {
         mockMvc.perform(MockMvcRequestBuilders.post("/user/save").content(jsonStr.getBytes()));
         //实际测试中，要手动编写这么长的JSON格式字符串很繁琐也很容易出错，可以借助Spring Boot自带的Jackson技术来序列化一个Java对象（可参考Spring Boot中的JSON技术），如下所示：
 
-        User user = new User();
+        UserVo user = new UserVo();
         user.setUsername("Dopa");
         user.setPasswd("ac3af72d9f95161a502fd326865c2f15");
         user.setStatus("1");

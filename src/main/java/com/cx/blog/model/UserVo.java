@@ -7,7 +7,7 @@ import lombok.Data;
  * @Date :  2019/11/19
  */
 @Data
-public class User {
+public class UserVo {
 
     String username;
     String passwd;
