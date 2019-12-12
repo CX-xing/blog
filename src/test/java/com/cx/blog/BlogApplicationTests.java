@@ -1,18 +1,9 @@
 package com.cx.blog;
 
+import com.cx.blog.annotation.Log;
 import org.junit.*;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest
 class BlogApplicationTests {
@@ -22,7 +13,7 @@ class BlogApplicationTests {
     }
 
     @BeforeClass
-    public static void beforeClassTest() {
+    public static void beforeClassTest() throws InterruptedException {
         System.out.println("before class test");
     }
 
@@ -54,8 +45,9 @@ class BlogApplicationTests {
     }
 
     @Test
-    public void Test2() {
+    public void Test2() throws InterruptedException {
         System.out.println("test 2+2=4");
+        Thread.sleep(3000L);
         Assert.assertEquals(4, 2 + 2);
     }
 

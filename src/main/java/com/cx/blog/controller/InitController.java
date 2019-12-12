@@ -1,5 +1,6 @@
 package com.cx.blog.controller;
 
+import com.cx.blog.annotation.Log;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class InitController {
 
     @RequestMapping("/")
+    @Log("hello")
     String index() {
         return "hello spring boot";
     }
